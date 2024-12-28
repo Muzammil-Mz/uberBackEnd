@@ -3,6 +3,8 @@ import config from "config"
 
 import("./utils/dbConnect.js")
 import customerRouter from "./controllers/Customer/index.js"
+import driverRouter from "./controllers/Driver/index.js"
+
 
 
 const app=express()
@@ -18,7 +20,9 @@ app.get("/",(req,res)=>{
     }
 })
 
+
 app.use("/api/customer", customerRouter)
+app.use("/api/driver",driverRouter)
 app.listen(port,()=>{
    console.log("Server is up and listening");
 })
